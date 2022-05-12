@@ -117,6 +117,8 @@ func set(w http.ResponseWriter, req *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 
+	w.WriteHeader(http.StatusCreated)
+
 	log.Printf("successfully set %s=%s\n", key, value)
 }
 
